@@ -1,0 +1,37 @@
+/* estilos.css */
+
+/* IDs */
+#darth-vader {
+    font-size: 1.5em;
+}
+
+#luke-skywalker {
+    font-style: italic;
+}
+
+/* Clases */
+.imperio {
+    background-color: red;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.rebeldes {
+    background-color: blue;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.apoyo {
+    font-style: italic;
+    text-align: center;
+}
+
+.soldado {
+    border: 2px dashed black;
+    letter-spacing: 2px;
+}
+
+.nave {
+    text-transform: uppercase;
+}
