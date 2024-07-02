@@ -91,44 +91,43 @@ main {
 /* Estilos para el contenedor de los elementos */
 .contenido-principal {
     color: white; /* Color de texto blanco */
-    display: flex; /* Utiliza flexbox para centrar el contenido */
-    flex-direction: column; /* Alinea los elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    justify-content: center; /* Centra los elementos verticalmente */
+    text-align: center; /* Centrar el texto horizontalmente */
     position: absolute; /* Posicionamiento absoluto para colocarlos encima de la imagen */
-    top: 50%; /* Ajustado para centrar verticalmente */
+    top: 50%; /* Ajustado para centrar verticalmente en dispositivos móviles */
     left: 50%; /* Ajusta la posición horizontal al centro */
     transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
-    font-weight: 800;
-    max-width: 90%;
-    padding: 10px; /* Espaciado interno */
+    width: 90%; /* Ancho del contenedor */
+    max-width: 800px; /* Ancho máximo para el contenido */
+    padding: 20px; /* Espaciado interno */
     box-sizing: border-box; /* Incluye el padding en el ancho */
-    z-index: 1; /* Asegura que los títulos estén sobre el fondo */
 }
 
 /* Estilos para los títulos */
 .contenido-principal h1,
 .contenido-principal h2,
 .contenido-principal h3 {
-    padding: 5px 10px; /* Ajustar el padding según sea necesario */
+    position: relative; /* Cambiado a relativo */
+    z-index: 1; /* Asegura que los títulos estén sobre el fondo */
+    display: block; /* Mostrar como bloque en línea para ajustarse al contenido */
+    width: fit-content; /* Ajustar el ancho al contenido del texto */
+    padding: 10px 5px; /* Ajustar el padding según sea necesario */
     background-color: rgba(59, 59, 59, 0.685); /* Color de fondo */
-    text-align: center; /* Centrar el texto */
-    margin: 15px 0; /* Espaciado entre los títulos */
-    width: fit-content;
-}
+    color: white; /* Color de texto */
+    margin: 30px auto; /* Añadir margen arriba y abajo para separar los títulos */
+    text-align: center;
 
+}
 .contenido-principal h1 {
     font-size: 30px; /* Tamaño de fuente para h1 */
 }
 .contenido-principal h2 {
-    font-size: 40px; /* Tamaño de fuente para h2 */
+    font-size: 50px; /* Tamaño de fuente para h2 */
     font-style: italic;
 }
 .contenido-principal h3 {
     font-size: 25px; /* Tamaño de fuente para h3 */
     font-weight: 200;
 }
-
 /* Estilos para el contenedor sobre nosotros */
 .contenido {
     display: flex; /* Utiliza flexbox */
@@ -265,5 +264,9 @@ footer {
     .imagenes img {
         max-width: 100%; /* Asegura que las imágenes no se desborden del contenedor */
         max-height: 400px; /* Altura máxima de las imágenes en pantallas pequeñas */
+    }
+
+    footer{
+        font-size: 12px;
     }
 }
