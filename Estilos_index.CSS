@@ -18,8 +18,7 @@ header {
     display: flex; /* Utilizamos flexbox para alinear elementos */
     align-items: center; /* Centramos verticalmente los elementos */
     justify-content: space-between; /* Espacio uniforme entre los elementos */
-    z-index: 999; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    padding: 10px 10px; /* Espaciado interno */
 }
 
 .izquierda {
@@ -28,70 +27,28 @@ header {
 }
 
 .barra-navegacion img {
-    height: 70px; /* Altura del logo */
+    height: 80px; /* Altura del logo */
     padding: 10px; /* Espaciado alrededor del logo */
     border-radius: 70%;
 }
 
 .hamburger {
     display: none;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    padding: 10px;
 }
 
-.hamburger ._layer {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 4px;
-    transition: all 0.3s ease;
-}
 
 .menuppal {
     display: flex;
 }
 
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-    .menuppal {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #f3de8aab;
-        z-index: 2;
-    }
-    .menuppal.is_active {
-        display: flex;
-    }
-    .botones {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-    .botones a {
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        box-shadow: none;
-    }
-}
 
 .botones {
     display: flex;
     align-items: center; /* Centramos verticalmente los elementos */
-    line-height: 40px;
+    line-height: 50px;
     color: #F5F5F5;
     font-size: 30px; /* Tamaño del botón */
     list-style: none;
-    margin: 0; /* Eliminamos cualquier margen predeterminado */
-    padding: 0; /* Eliminamos cualquier padding predeterminado */
 }
 
 .botones a {
@@ -99,7 +56,7 @@ header {
     font-weight: bold;
     text-decoration: none;
     color: #ffffff; 
-    padding: 10px 20px; 
+    padding: 20px 20px; 
     background-color: #fcdc5c; 
     border-radius: 10px;
     margin-right: 10px; 
@@ -116,7 +73,8 @@ main {
 .banner {
     position: relative;
     width: 100%;
-    height: 500px; /* Ajusta la altura según sea necesario */
+    height: auto; /* Ajusta la altura según sea necesario */
+    min-height: 500px;
     overflow: hidden;
 }
 
@@ -133,37 +91,37 @@ main {
 /* Estilos para el contenedor de los elementos */
 .contenido-principal {
     color: white; /* Color de texto blanco */
-    text-align: center; /* Centrar el texto horizontalmente */
+    display: flex; /* Utiliza flexbox para centrar el contenido */
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
     position: absolute; /* Posicionamiento absoluto para colocarlos encima de la imagen */
-    top: 50%; /* Ajustado para centrar verticalmente en dispositivos móviles */
+    top: 50%; /* Ajustado para centrar verticalmente */
     left: 50%; /* Ajusta la posición horizontal al centro */
     transform: translate(-50%, -50%); /* Centra vertical y horizontalmente */
-    width: 90%; /* Ancho del contenedor */
-    max-width: 800px; /* Ancho máximo para el contenido */
-    padding: 20px; /* Espaciado interno */
+    font-weight: 800;
+    max-width: 90%;
+    padding: 10px; /* Espaciado interno */
     box-sizing: border-box; /* Incluye el padding en el ancho */
+    z-index: 1; /* Asegura que los títulos estén sobre el fondo */
 }
 
 /* Estilos para los títulos */
 .contenido-principal h1,
 .contenido-principal h2,
 .contenido-principal h3 {
-    position: relative; /* Cambiado a relativo */
-    z-index: 1; /* Asegura que los títulos estén sobre el fondo */
-    display: block; /* Mostrar como bloque en línea para ajustarse al contenido */
-    width: fit-content; /* Ajustar el ancho al contenido del texto */
-    padding: 10px 5px; /* Ajustar el padding según sea necesario */
+    padding: 5px 10px; /* Ajustar el padding según sea necesario */
     background-color: rgba(59, 59, 59, 0.685); /* Color de fondo */
-    color: white; /* Color de texto */
-    margin: 30px auto; /* Añadir margen arriba y abajo para separar los títulos */
-    text-align: center;
-
+    text-align: center; /* Centrar el texto */
+    margin: 15px 0; /* Espaciado entre los títulos */
+    width: fit-content;
 }
+
 .contenido-principal h1 {
     font-size: 30px; /* Tamaño de fuente para h1 */
 }
 .contenido-principal h2 {
-    font-size: 50px; /* Tamaño de fuente para h2 */
+    font-size: 40px; /* Tamaño de fuente para h2 */
     font-style: italic;
 }
 .contenido-principal h3 {
@@ -176,6 +134,9 @@ main {
     display: flex; /* Utiliza flexbox */
     flex-direction: column; /* Apila los divisores verticalmente */
     align-items: center; /* Alinea los divisores en el centro horizontal */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .imagenes {
@@ -186,21 +147,10 @@ main {
 }
 
 .imagenes img {
-    max-height: 300px; /* Altura máxima de las imágenes */
+    max-width: 250px;
     padding: 10px; /* Espaciado alrededor de las imágenes */
     border-radius: 50%;
-    width: auto; /* Mantiene la proporción de las imágenes */
     height: auto; /* Mantiene la proporción de las imágenes */
-}
-
-@media (max-width: 768px) {
-    .imagenes {
-        flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
-    }
-    .imagenes img {
-        max-width: 100%; /* Asegura que las imágenes no se desborden del contenedor */
-        max-height: 200px; /* Altura máxima de las imágenes en pantallas pequeñas */
-    }
 }
 
 .texto {
@@ -211,7 +161,7 @@ main {
     padding: 20px; /* Añade espacio interno */
     margin: 20px 0; /* Añade margen arriba y abajo */
     width: 90%; /* Ancho del divisor */
-    max-width: 2000px; /* Máximo ancho para centrado en grandes pantallas */
+    max-width: 800px; /* Máximo ancho para centrado en grandes pantallas */
     box-sizing: border-box; /* Incluye el padding en el ancho */
     overflow: hidden; /* Oculta el contenido que desborda del divisor */
     color: #ffffff;
@@ -219,8 +169,14 @@ main {
 }
 
 .texto p {
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: bold;
+    text-align: center;
+}
+
+.texto ol {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .texto ol {
@@ -234,8 +190,80 @@ footer {
     justify-content: space-around; /* Espacio igual entre los elementos */
     text-align: center; /* Centrar el texto dentro de cada p */
     padding: 5px 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Añadir una ligera sombra para la separación visual */
     width: 100%; /* Asegura que el footer ocupe el ancho completo */
     font-size: 14px; /* Ajustar el tamaño de la letra si es necesario */
     color: #525252;
+}
+
+
+/* Mostrar el ícono de hamburguesa en dispositivos móviles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        background-color: transparent;
+        left: 0;
+        top: 0;
+        height: 30px;
+        width: 30px;
+        padding: 20px;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+        z-index: 1002;
+        cursor: pointer;
+        user-select: none;
+    }
+    .hamburger.is_active {
+        background-color: none;
+    }
+    ._layer {
+        margin-bottom: 4px;
+        border-radius: 2px;
+        width: 28px;
+        height: 4px;
+        opacity: 1;
+        background-color: #fcdc5c;
+    }
+    .menuppal {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fcfcd7;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        transform: translate3d(0px, -100%, 0px);
+        transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    }
+    .menuppal.is_active {
+        display: flex;
+        transform: translate3d(0px, 0px, 0px);
+    }
+    .botones {
+        flex-direction: column;
+        align-items: center;
+        justify-content: top;
+        margin: 0;
+        padding: 0;
+    }
+    .menuppal ul li {
+        list-style: none;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 3em;
+        height: 3em;
+        color: #ffffff;
+        text-transform: none;
+        font-weight: bold;
+    }
+    .imagenes {
+        flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
+    }
+    .imagenes img {
+        max-width: 100%; /* Asegura que las imágenes no se desborden del contenedor */
+        max-height: 400px; /* Altura máxima de las imágenes en pantallas pequeñas */
+    }
 }
